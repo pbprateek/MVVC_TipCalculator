@@ -1,5 +1,7 @@
 package com.prateek.acni.tipcalculator
 
+import android.arch.lifecycle.ViewModelProvider
+import android.arch.lifecycle.ViewModelProviders
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.design.widget.Snackbar
@@ -8,6 +10,7 @@ import android.view.Menu
 import android.view.MenuItem
 import com.prateek.acni.tipcalculator.databinding.ActivityMainBinding
 import com.prateek.acni.tipcalculator.viewmodel.CalculatorViewModel
+import com.prateek.acni.tipcalculator.viewmodel.ObservableViewModel
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -22,7 +25,8 @@ class TipCalculatorActivity : AppCompatActivity() {
         binding=DataBindingUtil.setContentView(this,R.layout.activity_main)
 
         //this is to bind child content_layout with viewmodel
-        binding.vm= CalculatorViewModel()
+        //binding.vm= CalculatorViewModel()
+        binding.vm= ViewModelProviders.of(this).get(CalculatorViewModel::class.java)
 
         setSupportActionBar(binding.toolbar)
 
