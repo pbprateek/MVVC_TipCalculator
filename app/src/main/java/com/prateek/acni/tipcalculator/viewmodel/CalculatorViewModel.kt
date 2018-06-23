@@ -1,12 +1,13 @@
 package com.prateek.acni.tipcalculator.viewmodel
 
+import android.app.Application
 import android.databinding.BaseObservable
 import com.prateek.acni.tipcalculator.model.Calculator
 import com.prateek.acni.tipcalculator.model.TipCalculation
 
 //val calculator: Calculator=Calculator()  we do this to keep default values of calculator
 // if in case nothing is provided
-class CalculatorViewModel(val calculator: Calculator= Calculator()):BaseObservable(){
+class CalculatorViewModel(val calculator: Calculator= Calculator()):ObservableViewModel(){
 
     var inputCheckAmount = ""
 
